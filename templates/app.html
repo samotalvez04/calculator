@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculadora</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/app.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Calculadora con Flask App</h2>
+    </div>
+    <div class="container">
+      <form action="/calcular" method="POST">
+        <div class="form-group">
+          <label for="Numero uno">Primer numero</label>
+          <input type="text" placeholder="Primer numero" name="num1" />
+        </div>
+        <div class="form-group">
+          <label for="Numero dos">Segundo numero</label>
+          <input type="text" placeholder="Segundo numero" name="num2" />
+        </div>
+        <div class="form-group">
+          <label for="Operacion">Operacion</label>
+          <select name="operador">
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+          </select>
+        </div>
+        <input type="submit" value="Calcular" id="calc_btn" class="btn" />
+        <br />
+        <div class="alert">
+          {{ resultado }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
